@@ -458,7 +458,6 @@ function createMaterial() {
     shader.fragmentShader = shader.fragmentShader.replace(
       '#include <aomap_fragment>',
       /* glsl */ `
-        // reads channel R, compatible with a combined OcclusionRoughnessMetallic (RGB) texture
         float ambientOcclusion = vHeightShade;
 
         reflectedLight.indirectDiffuse *= ambientOcclusion;
