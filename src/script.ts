@@ -325,7 +325,7 @@ function createMaterial() {
           
           for(int i = 0; i < MAX_OCTAVES; i ++ ) {
             float modulation = step(float(i), 1.5) * 2.0 - 1.0;
-            modulation *= step(float(i), uNumOctaves);
+            modulation *= 1.0 - step(uNumOctaves, float(i));
             values[i] = modulation * amplitude * noise(st);
             value += values[i];
             st *= 2.0;
